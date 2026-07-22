@@ -1,0 +1,518 @@
+/* ============================================
+   ESTILOS COMPARTIDOS: Nosotros, Políticas, Ofertas
+   ============================================ */
+
+/* --- Hero pequeño de página interior --- */
+.page-hero{
+    position:relative;
+    padding:140px 8% 70px;
+    text-align:center;
+    background:
+        radial-gradient(circle at 20% 20%, rgba(59,130,246,.18), transparent 55%),
+        radial-gradient(circle at 80% 0%, rgba(59,130,246,.12), transparent 50%),
+        var(--bg);
+    border-bottom:1px solid var(--border-soft);
+}
+
+.page-hero .tag{
+    display:inline-block;
+    padding:8px 18px;
+    border-radius:999px;
+    background:rgba(59,130,246,.12);
+    color:var(--primary);
+    font-size:13px;
+    font-weight:700;
+    letter-spacing:.06em;
+    text-transform:uppercase;
+    margin-bottom:20px;
+}
+
+.page-hero h1{
+    font-family:var(--font-display);
+    font-size:clamp(32px, 5vw, 52px);
+    font-weight:800;
+    letter-spacing:-0.02em;
+    margin-bottom:16px;
+}
+
+.page-hero h1 span{
+    color:var(--primary);
+}
+
+.page-hero p{
+    max-width:620px;
+    margin:0 auto;
+    color:var(--text-muted);
+    font-size:17px;
+    line-height:1.6;
+}
+
+.btn-volver-inline{
+    position:absolute;
+    top:24px;
+    left:8%;
+}
+
+/* --- Secciones genéricas de contenido --- */
+.page-section{
+    padding:80px 8%;
+}
+
+.page-section.alt{
+    background:var(--bg-alt);
+}
+
+.page-section-head{
+    text-align:center;
+    max-width:640px;
+    margin:0 auto 50px;
+}
+
+.page-section-head h2{
+    font-family:var(--font-display);
+    font-size:32px;
+    font-weight:700;
+    letter-spacing:-0.02em;
+    margin-bottom:14px;
+}
+
+.page-section-head p{
+    color:var(--text-muted);
+    font-size:16px;
+    line-height:1.6;
+}
+
+/* --- Historia (texto + imagen) --- */
+.historia{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:60px;
+    align-items:center;
+    max-width:1200px;
+    margin:0 auto;
+}
+
+.historia img{
+    width:100%;
+    border-radius:24px;
+    box-shadow:var(--shadow);
+}
+
+.historia-texto h2{
+    font-family:var(--font-display);
+    font-size:30px;
+    font-weight:700;
+    margin-bottom:18px;
+    letter-spacing:-0.02em;
+}
+
+.historia-texto p{
+    color:var(--text-muted);
+    line-height:1.75;
+    margin-bottom:16px;
+    font-size:15.5px;
+}
+
+/* --- Estadísticas --- */
+.stats-bar{
+    max-width:1100px;
+    margin:0 auto;
+    display:grid;
+    grid-template-columns:repeat(4, 1fr);
+    gap:30px;
+    text-align:center;
+}
+
+.stat-item h3{
+    font-family:var(--font-display);
+    font-size:40px;
+    font-weight:800;
+    color:var(--primary);
+    margin-bottom:6px;
+}
+
+.stat-item span{
+    color:var(--text-muted);
+    font-size:14px;
+}
+
+/* --- Grid de valores / misión-visión --- */
+.valores-grid{
+    max-width:1100px;
+    margin:0 auto;
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(230px, 1fr));
+    gap:26px;
+}
+
+.valor-card{
+    background:var(--surface);
+    border:1px solid var(--border-soft);
+    border-radius:20px;
+    padding:34px 26px;
+    text-align:left;
+    transition:.25s;
+}
+
+.valor-card:hover{
+    transform:translateY(-4px);
+    border-color:rgba(59,130,246,.4);
+}
+
+.valor-card i{
+    font-size:26px;
+    color:var(--primary);
+    background:rgba(59,130,246,.12);
+    width:54px;
+    height:54px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    border-radius:14px;
+    margin-bottom:18px;
+}
+
+.valor-card h3{
+    font-size:18px;
+    font-weight:700;
+    margin-bottom:8px;
+    font-family:var(--font-display);
+}
+
+.valor-card p{
+    color:var(--text-muted);
+    font-size:14.5px;
+    line-height:1.6;
+}
+
+/* --- CTA final --- */
+.page-cta{
+    max-width:900px;
+    margin:0 auto;
+    text-align:center;
+    background:linear-gradient(135deg, var(--surface), var(--surface-2));
+    border:1px solid var(--border-soft);
+    border-radius:28px;
+    padding:60px 40px;
+}
+
+.page-cta h2{
+    font-family:var(--font-display);
+    font-size:28px;
+    font-weight:700;
+    margin-bottom:14px;
+}
+
+.page-cta p{
+    color:var(--text-muted);
+    margin-bottom:28px;
+}
+
+/* ============================================
+   POLÍTICAS — acordeón
+   ============================================ */
+
+.politicas-nav{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:12px;
+    max-width:900px;
+    margin:0 auto 50px;
+}
+
+.politicas-nav a{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    padding:10px 20px;
+    border-radius:999px;
+    background:var(--surface);
+    border:1px solid var(--border-soft);
+    color:var(--text-muted);
+    text-decoration:none;
+    font-size:14px;
+    font-weight:500;
+    transition:.2s;
+}
+
+.politicas-nav a:hover{
+    color:var(--text);
+    border-color:var(--primary);
+}
+
+.acordeon{
+    max-width:820px;
+    margin:0 auto;
+    display:flex;
+    flex-direction:column;
+    gap:16px;
+}
+
+.acordeon-item{
+    background:var(--surface);
+    border:1px solid var(--border-soft);
+    border-radius:18px;
+    overflow:hidden;
+    scroll-margin-top:100px;
+}
+
+.acordeon-pregunta{
+    width:100%;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:16px;
+    padding:22px 26px;
+    background:none;
+    border:none;
+    color:var(--text);
+    font-family:var(--font-display);
+    font-size:16.5px;
+    font-weight:600;
+    text-align:left;
+    cursor:pointer;
+}
+
+.acordeon-pregunta i{
+    color:var(--primary);
+    font-size:15px;
+    transition:transform .25s;
+    flex-shrink:0;
+}
+
+.acordeon-item.abierto .acordeon-pregunta i{
+    transform:rotate(180deg);
+}
+
+.acordeon-respuesta{
+    max-height:0;
+    overflow:hidden;
+    transition:max-height .3s ease;
+}
+
+.acordeon-respuesta-inner{
+    padding:0 26px 24px;
+    color:var(--text-muted);
+    font-size:15px;
+    line-height:1.75;
+}
+
+.acordeon-respuesta-inner ul{
+    margin:12px 0 0 20px;
+}
+
+.acordeon-respuesta-inner li{
+    margin-bottom:8px;
+}
+
+.acordeon-respuesta-inner strong{
+    color:var(--text);
+}
+
+/* ============================================
+   OFERTAS
+   ============================================ */
+
+.ofertas-hero{
+    position:relative;
+    margin:0 8% 60px;
+    border-radius:28px;
+    overflow:hidden;
+    padding:70px 50px;
+    background:
+        linear-gradient(120deg, rgba(59,130,246,.35), rgba(0,0,0,.4)),
+        var(--surface);
+    border:1px solid var(--border-soft);
+    text-align:center;
+    transition:background .3s ease;
+}
+
+[data-theme="light"] .ofertas-hero{
+    background:
+        linear-gradient(120deg, rgba(59,130,246,.16), rgba(59,130,246,.04)),
+        var(--surface);
+}
+
+.ofertas-hero .tag{
+    display:inline-block;
+    padding:8px 18px;
+    border-radius:999px;
+    background:rgba(255,255,255,.12);
+    color:var(--white);
+    font-size:13px;
+    font-weight:700;
+    letter-spacing:.06em;
+    text-transform:uppercase;
+    margin-bottom:18px;
+}
+
+[data-theme="light"] .ofertas-hero .tag{
+    background:rgba(0,0,0,.05);
+    color:var(--text);
+}
+
+.ofertas-hero h1{
+    font-family:var(--font-display);
+    font-size:clamp(30px, 4.5vw, 46px);
+    font-weight:800;
+    margin-bottom:14px;
+}
+
+.ofertas-hero p{
+    color:rgba(255,255,255,.85);
+    max-width:520px;
+    margin:0 auto 30px;
+}
+
+[data-theme="light"] .ofertas-hero p{
+    color:var(--text-muted);
+}
+
+.categorias-oferta{
+    max-width:1200px;
+    margin:0 auto 70px;
+    padding:0 8%;
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(240px, 1fr));
+    gap:22px;
+}
+
+.categoria-oferta-card{
+    position:relative;
+    display:flex;
+    align-items:center;
+    gap:16px;
+    background:var(--surface);
+    border:1px solid var(--border-soft);
+    border-radius:18px;
+    padding:20px 22px;
+    text-decoration:none;
+    color:var(--text);
+    transition:.25s;
+}
+
+.categoria-oferta-card:hover{
+    border-color:var(--primary);
+    transform:translateY(-3px);
+}
+
+.categoria-oferta-card i,
+.categoria-oferta-card img{
+    font-size:22px;
+    color:var(--primary);
+    background:rgba(59,130,246,.12);
+    width:48px;
+    height:48px;
+    border-radius:12px;
+    flex-shrink:0;
+    object-fit:contain;
+    padding:6px;
+}
+
+.categoria-oferta-card i{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+.categoria-oferta-card h4{
+    font-size:15.5px;
+    font-weight:700;
+    margin-bottom:2px;
+}
+
+.categoria-oferta-card span{
+    font-size:13px;
+    color:var(--text-muted);
+}
+
+/* --- Tarjeta de cupón / cómo funciona --- */
+.cupon-info{
+    max-width:1000px;
+    margin:0 auto 80px;
+    padding:0 8%;
+    display:grid;
+    grid-template-columns:repeat(3, 1fr);
+    gap:24px;
+}
+
+.cupon-paso{
+    background:var(--surface);
+    border:1px solid var(--border-soft);
+    border-radius:18px;
+    padding:28px 24px;
+    text-align:center;
+}
+
+.cupon-paso .paso-num{
+    width:36px;
+    height:36px;
+    border-radius:50%;
+    background:var(--primary);
+    color:var(--white);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-weight:700;
+    margin:0 auto 16px;
+    font-family:var(--font-display);
+}
+
+.cupon-paso h4{
+    font-size:15.5px;
+    font-weight:700;
+    margin-bottom:8px;
+}
+
+.cupon-paso p{
+    color:var(--text-muted);
+    font-size:14px;
+    line-height:1.6;
+}
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+
+@media (max-width: 900px){
+    .historia{
+        grid-template-columns:1fr;
+        gap:34px;
+    }
+
+    .stats-bar{
+        grid-template-columns:repeat(2, 1fr);
+        gap:34px;
+    }
+
+    .cupon-info{
+        grid-template-columns:1fr;
+    }
+}
+
+@media (max-width: 640px){
+    .page-hero{
+        padding:120px 6% 50px;
+    }
+
+    .btn-volver-inline{
+        position:static;
+        display:inline-flex;
+        margin-bottom:24px;
+    }
+
+    .page-section{
+        padding:60px 6%;
+    }
+
+    .ofertas-hero{
+        margin:0 5% 40px;
+        padding:50px 24px;
+    }
+
+    .categorias-oferta,
+    .cupon-info{
+        padding:0 6%;
+    }
+}

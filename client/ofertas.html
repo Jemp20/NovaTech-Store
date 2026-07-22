@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Ofertas | NovaTech Store</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@600;700;800;900&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="css/navbar.css">
+        <link rel="stylesheet" href="css/auth.css">
+        <link rel="stylesheet" href="css/notify.css">
+        <link rel="stylesheet" href="css/products.css">
+        <link rel="stylesheet" href="css/paginas.css">
+        <link rel="stylesheet" href="css/whatsapp-float.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+        <script>
+        // Aplica el tema guardado ANTES de pintar la página, para evitar parpadeo
+        (function () {
+            var tema = localStorage.getItem("novatech-tema") || "dark";
+            document.documentElement.setAttribute("data-theme", tema);
+        })();
+    </script>
+</head>
+    <body>
+
+<header>
+<nav class="navbar">
+
+    <div class="nav-left">
+        <i class="fa-solid fa-bars" id="menu-toggle"></i>
+        <i class="fa-solid fa-moon" id="theme-toggle" title="Cambiar tema"></i>
+    </div>
+
+    <a href="index.html" class="logo">
+        <img src="images/logo-transparente.png" alt="NovaTech Store" class="logo-img">
+    </a>
+
+    <ul class="menu" id="menu">
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="productos.html">Productos</a></li>
+        <li><a href="ofertas.html">Ofertas</a></li>
+        <li><a href="nosotros.html">Nosotros</a></li>
+        <li><a href="politicas.html">Políticas</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+    </ul>
+
+    <div class="nav-icons">
+
+    <a href="carrito.html" class="cart-icon-wrapper">
+        <i class="fa-solid fa-cart-shopping"></i>
+        <span id="cart-badge" class="cart-badge">0</span>
+    </a>
+
+    <div class="user-wrapper">
+        <i class="fa-solid fa-circle-user" id="user-toggle"></i>
+        <div class="user-dropdown" id="user-dropdown">
+            <div id="nav-account-slot"></div>
+        </div>
+    </div>
+
+    <div class="search-wrapper">
+        <i class="fa-solid fa-magnifying-glass" id="search-toggle"></i>
+        <div class="search-box" id="search-box">
+            <input type="text" id="search-input" placeholder="Buscar productos...">
+        </div>
+    </div>
+
+</div>
+
+</nav>
+</header>
+
+<!-- HERO DE OFERTAS -->
+<section class="ofertas-hero" style="margin-top:100px;">
+    <span class="tag"><i class="fa-solid fa-tag"></i>&nbsp; Promociones activas</span>
+    <h1>Ahorra en tu próxima compra tech</h1>
+    <p>Usa tu cupón de descuento al pagar y llévate lo último en tecnología a un mejor precio.</p>
+    <a href="productos.html" class="btn">Ver todo el catálogo</a>
+</section>
+
+<!-- CATEGORÍAS EN OFERTA -->
+<div class="page-section-head" style="margin-bottom:36px;">
+    <h2>Explora por categoría</h2>
+    <p>Encuentra rápidamente los productos que más te interesan.</p>
+</div>
+
+<div class="categorias-oferta">
+
+    <a href="productos.html?buscar=iPhone&origen=ofertas" class="categoria-oferta-card">
+        <img src="images/image17-removebg-preview.png" alt="iPhone">
+        <div>
+            <h4>iPhone</h4>
+            <span>Últimos modelos disponibles</span>
+        </div>
+    </a>
+
+    <a href="productos.html?buscar=MacBook&origen=ofertas" class="categoria-oferta-card">
+        <img src="images/MacBook.png" alt="MacBook">
+        <div>
+            <h4>MacBook</h4>
+            <span>Potencia para trabajar y crear</span>
+        </div>
+    </a>
+
+    <a href="productos.html?categoria=Smartwatch&origen=ofertas" class="categoria-oferta-card">
+        <img src="images/Smartwatch.png" alt="Smartwatch">
+        <div>
+            <h4>Smartwatch</h4>
+            <span>Tecnología en tu muñeca</span>
+        </div>
+    </a>
+
+    <a href="productos.html?categoria=Audio&origen=ofertas" class="categoria-oferta-card">
+        <img src="images/Audifonos.png" alt="Audífonos">
+        <div>
+            <h4>Audífonos</h4>
+            <span>Sonido de alta calidad</span>
+        </div>
+    </a>
+
+    <a href="productos.html?categoria=Accesorios&origen=ofertas" class="categoria-oferta-card">
+        <img src="images/Accesorios.png" alt="Accesorios">
+        <div>
+            <h4>Accesorios</h4>
+            <span>Complementa tus equipos</span>
+        </div>
+    </a>
+
+    <a href="productos.html?categoria=Tablets&origen=ofertas" class="categoria-oferta-card">
+        <img src="images/Tablet.png" alt="Tablets">
+        <div>
+            <h4>Tablets</h4>
+            <span>Ideal para estudio y trabajo</span>
+        </div>
+    </a>
+
+</div>
+
+<!-- CÓMO USAR UN CUPÓN -->
+<div class="page-section-head" style="margin-bottom:36px;">
+    <h2>¿Cómo aplicar un cupón?</h2>
+    <p>Si tienes un código de descuento, usarlo es muy sencillo.</p>
+</div>
+
+<div class="cupon-info">
+    <div class="cupon-paso">
+        <div class="paso-num">1</div>
+        <h4>Agrega tus productos</h4>
+        <p>Explora el catálogo y añade al carrito todo lo que quieras llevar.</p>
+    </div>
+
+    <div class="cupon-paso">
+        <div class="paso-num">2</div>
+        <h4>Ingresa tu código</h4>
+        <p>En el carrito, escribe tu cupón en el campo "¿Tienes un cupón de descuento?" y aplícalo.</p>
+    </div>
+
+    <div class="cupon-paso">
+        <div class="paso-num">3</div>
+        <h4>Disfruta el descuento</h4>
+        <p>El total se actualiza automáticamente antes de que confirmes tu pago.</p>
+    </div>
+</div>
+
+<div style="text-align:center; margin-bottom:80px;">
+    <a href="carrito.html" class="btn-outline" style="color:var(--text); border-color:var(--border-soft);">Ir a mi carrito</a>
+</div>
+
+<!-- CATÁLOGO -->
+<section class="products" id="catalogo-ofertas">
+    <h2 class="section-title">Productos disponibles</h2>
+
+    <div class="product-grid">
+        <!-- Las tarjetas de producto se generan dinámicamente desde js/app.js -->
+    </div>
+</section>
+
+<footer class="footer">
+
+    <div class="footer-content">
+
+        <div class="footer-brand">
+            <h3>NovaTech Store</h3>
+            <p>Tecnología que impulsa tu futuro.</p>
+        </div>
+
+        <div class="footer-links">
+            <h4>Navegación</h4>
+            <a href="index.html">Inicio</a>
+            <a href="productos.html">Productos</a>
+            <a href="ofertas.html">Ofertas</a>
+            <a href="nosotros.html">Nosotros</a>
+            <a href="politicas.html">Políticas</a>
+            <a href="contacto.html">Contacto</a>
+        </div>
+
+        <div class="footer-social">
+            <h4>Síguenos</h4>
+            <div class="footer-social-icons">
+                <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                <a href="#"><i class="fa-brands fa-tiktok"></i></a>
+            </div>
+        </div>
+
+    </div>
+
+    <p class="footer-copy">&copy; 2026 NovaTech Store. Todos los derechos reservados.</p>
+
+</footer>
+
+<script src="js/notify.js"></script>
+<script src="js/cart.js"></script>
+<script src="js/favoritos.js"></script>
+<script src="js/app.js"></script>
+<script src="js/auth.js"></script>
+<script src="js/navbar.js"></script>
+
+    <a href="https://wa.me/573044647130?text=Hola%2C%20tengo%20una%20pregunta%20sobre%20un%20producto%20de%20NovaTech%20Store" class="whatsapp-float" target="_blank" rel="noopener" aria-label="Escríbenos por WhatsApp">
+    <i class="fa-brands fa-whatsapp"></i>
+</a>
+
+</body>
+</html>

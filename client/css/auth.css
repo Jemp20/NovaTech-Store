@@ -1,0 +1,143 @@
+/* Páginas de autenticación (login / registro) */
+
+.auth-section{
+    min-height: calc(100vh - 90px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 60px 20px;
+    background: var(--bg);
+}
+
+.auth-card{
+    background: var(--surface);
+    width: 100%;
+    max-width: 420px;
+    border-radius: 20px;
+    border: 1px solid var(--border-soft);
+    box-shadow: none;
+    padding: 48px 40px;
+}
+
+.auth-card h2{
+    font-size: 24px;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    color: var(--text);
+    margin-bottom: 6px;
+    font-family: var(--font-display);
+}
+
+.auth-card .auth-subtitle{
+    color: var(--text-muted);
+    font-size: 14px;
+    margin-bottom: 30px;
+}
+
+.auth-form{
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.auth-field{
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.auth-field label{
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--text);
+}
+
+.auth-field input{
+    padding: 12px 14px;
+    border: 1px solid var(--border-soft);
+    background: var(--surface-2);
+    color: var(--text);
+    border-radius: 10px;
+    font-family: inherit;
+    font-size: 15px;
+    transition: .2s;
+}
+
+.auth-field input:focus{
+    outline: none;
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(59,130,246,.2);
+}
+
+.auth-error{
+    display: none;
+    background: rgba(239,68,68,.12);
+    border: 1px solid rgba(239,68,68,.35);
+    color: #f87171;
+    font-size: 13px;
+    padding: 10px 14px;
+    border-radius: 8px;
+}
+
+.auth-error.active{
+    display: block;
+}
+
+.auth-success{
+    display: none;
+    background: rgba(34,197,94,.12);
+    border: 1px solid rgba(34,197,94,.35);
+    color: #4ade80;
+    font-size: 13px;
+    padding: 10px 14px;
+    border-radius: 8px;
+}
+
+.auth-success.active{
+    display: block;
+}
+
+.auth-submit{
+    margin-top: 6px;
+    width: 100%;
+    text-align: center;
+}
+
+.auth-submit:disabled{
+    opacity: .6;
+    cursor: not-allowed;
+}
+
+.auth-footer-text{
+    margin-top: 24px;
+    text-align: center;
+    font-size: 14px;
+    color: var(--text-muted);
+}
+
+.auth-footer-text a{
+    color: var(--primary);
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.auth-footer-text a:hover{
+    text-decoration: underline;
+}
+
+/* Estado de sesión en el navbar */
+
+.nav-account{
+    color: var(--text-muted);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 15px;
+    cursor: pointer;
+    background: none;
+    border: none;
+    font-family: inherit;
+}
+
+.nav-account:hover{
+    color: var(--primary);
+}

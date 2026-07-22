@@ -1,0 +1,245 @@
+/* HERO */
+
+.hero{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row-reverse;
+    gap: 80px;
+    min-height: 90vh;
+    padding: 0 8%;
+    overflow: hidden;
+    background: radial-gradient(circle at right,#2c5cff 0%,#101828 45%,#05070d 100%);
+    transition: background .3s ease;
+}
+
+/* Tema claro estilo Apple: mismo acento azul, pero sobre fondo claro */
+[data-theme="light"] .hero{
+    background: radial-gradient(circle at right, rgba(59,130,246,.18) 0%, #F5F5F7 45%, #FBFBFD 100%);
+}
+
+[data-theme="light"] .tag{
+    background: rgba(0,0,0,.04);
+    border-color: rgba(0,0,0,.12);
+    color: var(--text);
+}
+
+[data-theme="light"] .hero h1,
+[data-theme="light"] .hero h1 span{
+    color: var(--text);
+}
+
+[data-theme="light"] .hero p{
+    color: var(--text-muted);
+}
+
+[data-theme="light"] .btn-outline{
+    border-color: rgba(0,0,0,.2);
+    color: var(--text);
+}
+
+[data-theme="light"] .btn-outline:hover{
+    border-color: var(--text);
+    background: rgba(0,0,0,.05);
+}
+
+[data-theme="light"] .feature{
+    color: var(--text-muted);
+}
+
+
+
+.hero-content{
+    width: 50%;
+    max-width: 620px;
+    display:flex;
+    flex-direction:column;
+    align-items:flex-start;
+    text-align:left;
+    z-index:2;
+}
+
+.tag{
+    display: inline-block;
+    background: rgba(255,255,255,.12);
+    backdrop-filter: blur(6px);
+    border: 1px solid rgba(255,255,255,.35);
+    color: var(--white);
+    padding: 8px 18px;
+    border-radius: 30px;
+    font-weight: 500;
+    font-size: 13px;
+    letter-spacing: 0.5px;
+    margin-bottom: 24px;
+}
+
+.hero-bg{
+    width: 520px;
+    position: absolute;
+    right: 8%;
+    bottom: 40px;
+    z-index: 2;
+    animation: float 4s ease-in-out infinite;
+}
+
+
+
+.hero h1{
+    font-size:4.5rem;
+    font-weight:800;
+    line-height:1.05;
+    letter-spacing:-2px;
+    color:white;
+    margin-bottom:24px;
+}
+
+.hero h1 span{
+
+    color:#ffffff;
+
+}
+
+.hero p{
+
+    font-size:20px;
+    max-width:650px;
+    color:#CBD5E1;
+    line-height:1.8;
+    margin-bottom:45px;
+}
+
+.hero-buttons{
+    display: flex;
+    gap: 16px;
+    justify-content:flex-start;
+}
+
+.btn-outline{
+    display: inline-block;
+    border: 1px solid rgba(255,255,255,.6);
+    color: var(--white);
+    padding: 15px 34px;
+    border-radius: 980px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: .2s;
+}
+
+.btn-outline:hover{
+    border-color: var(--white);
+    background: rgba(255,255,255,.1);
+}
+
+@media (max-width: 768px){
+
+.hero{
+    min-height:auto;
+    padding:110px 25px 70px;
+    flex-direction:column;
+    justify-content:center;
+    text-align:center;
+    gap:40px;
+}
+
+.hero-content{
+    width:100%;
+    max-width:100%;
+    align-items:center;
+    text-align:center;
+}
+
+.tag{
+    margin-bottom:18px;
+}
+
+.hero h1{
+    font-size:3rem;
+    line-height:1.1;
+    letter-spacing:-1px;
+}
+
+.hero p{
+    font-size:17px;
+    margin-bottom:30px;
+}
+
+.hero-buttons{
+    width:100%;
+    flex-direction:column;
+    align-items:center;
+}
+
+.hero-buttons .btn,
+.hero-buttons .btn-outline{
+    width:100%;
+    max-width:320px;
+}
+
+.hero-features{
+    justify-content:center;
+    gap:18px 12px;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+}
+
+.hero-bg{
+    position: static;
+    width:50%;
+    max-width:200px;
+    margin:0 auto;
+    animation: float 4s ease-in-out infinite;
+}
+
+}
+
+
+
+.hero-features {
+        width: 100%;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 0px 20px;
+        margin-top: 35px;
+    }
+
+    .feature {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 8px;
+        min-width: 0;
+        min-height: 50px;
+        font-size: 14px;
+        white-space: nowrap;
+    }
+
+    .feature i {
+        flex: 0 0 28px;
+        width: 28px;
+        text-align: center;
+        color: #3B82F6;
+    }
+
+    .feature span {
+        line-height: 1.2;
+    }
+
+@keyframes float{
+
+0%{
+    transform:translateY(0);
+}
+
+50%{
+    transform:translateY(-15px);
+}
+
+100%{
+    transform:translateY(0);
+}
+
+}
+
+
+

@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>NovaTech Store</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="css/navbar.css">
+        <link rel="stylesheet" href="css/auth.css">
+        <link rel="stylesheet" href="css/notify.css">
+        <link rel="stylesheet" href="css/hero.css">
+        <link rel="stylesheet" href="css/products.css">
+        <link rel="stylesheet" href="css/whatsapp-float.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+           <script>
+        // Aplica el tema guardado ANTES de pintar la página, para evitar parpadeo
+        (function () {
+            var tema = localStorage.getItem("novatech-tema") || "dark";
+            document.documentElement.setAttribute("data-theme", tema);
+        })();
+    </script>
+</head>
+       <body>
+
+<header>
+
+<nav class="navbar">
+
+    <div class="nav-left">
+        <i class="fa-solid fa-bars" id="menu-toggle"></i>
+        <i class="fa-solid fa-moon" id="theme-toggle" title="Cambiar tema"></i>
+    </div>
+
+    <a href="index.html" class="logo">
+        <img src="images/logo-transparente.png" alt="NovaTech Store" class="logo-img">
+    </a>
+
+    <ul class="menu" id="menu">
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="productos.html">Productos</a></li>
+        <li><a href="ofertas.html">Ofertas</a></li>
+        <li><a href="nosotros.html">Nosotros</a></li>
+        <li><a href="politicas.html">Políticas</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+    
+    </ul>
+
+   <div class="nav-icons">
+
+    <a href="carrito.html" class="cart-icon-wrapper">
+        <i class="fa-solid fa-cart-shopping"></i>
+        <span id="cart-badge" class="cart-badge">0</span>
+    </a>
+
+    <div class="user-wrapper">
+        <i class="fa-solid fa-circle-user" id="user-toggle"></i>
+        <div class="user-dropdown" id="user-dropdown">
+            <div id="nav-account-slot"></div>
+        </div>
+    </div>
+
+    <div class="search-wrapper">
+        <i class="fa-solid fa-magnifying-glass" id="search-toggle"></i>
+        <div class="search-box" id="search-box">
+            <input type="text" id="search-input" placeholder="Buscar productos...">
+        </div>
+    </div>
+
+</div>
+
+</nav>
+
+    </header>
+
+    <section class="hero">
+
+    <img src="images/iPhone17Pro.png" alt="Hero" class="hero-bg">
+
+    <div class="hero-overlay"></div>
+
+    <div class="hero-content">
+
+        <span class="tag">
+     NUEVA COLECCIÓN 2026
+</span>
+
+<h1>
+    La mejor tecnología
+    <span>al mejor precio</span>
+</h1>
+
+<p>
+    Smartphones, laptops y accesorios originales con garantía oficial,
+    envíos rápidos a toda Colombia y múltiples métodos de pago.
+</p>
+
+<div class="hero-buttons">
+
+<a href="productos.html" class="btn">
+Comprar ahora
+</a>
+
+<a href="productos.html" class="btn-outline">
+Ver productos
+</a>
+
+</div>
+
+        <div class="hero-features">
+
+<div class="feature">
+<i class="fa-solid fa-truck-fast"></i>
+<span>Envíos rápidos</span>
+</div>
+
+<div class="feature">
+<i class="fa-solid fa-shield-halved"></i>
+<span>Garantía oficial</span>
+</div>
+
+<div class="feature">
+<i class="fa-solid fa-credit-card"></i>
+<span>Pago seguro</span>
+</div>
+
+<div class="feature">
+<i class="fa-solid fa-star"></i>
+<span>Productos originales</span>
+</div>
+
+</div>
+
+    </div>
+
+</section>
+
+<section class="categories">
+
+    <h2 class="section-title">Categorías</h2>
+
+    <div class="categories-strip">
+
+        <a href="productos.html?buscar=iPhone" class="category-tile">
+            <img src="images/image17-removebg-preview.png" alt="iPhone">
+            <div class="category-tile-texto">
+                <h3>iPhone</h3>
+                <span>Ver productos</span>
+            </div>
+        </a>
+
+        <a href="productos.html?buscar=MacBook" class="category-tile">
+            <img src="images/macbook-6_hgfm-removebg-preview.png" alt="MacBook">
+            <div class="category-tile-texto">
+                <h3>MacBook</h3>
+                <span>Ver productos</span>
+            </div>
+        </a>
+
+        <a href="productos.html?categoria=Smartwatch" class="category-tile">
+            <img src="images/Smartwatch.png" alt="Smartwatch">
+            <div class="category-tile-texto">
+                <h3>Smartwatch</h3>
+                <span>Ver productos</span>
+            </div>
+        </a>
+
+        <a href="productos.html?categoria=Audio" class="category-tile">
+            <img src="images/Audifonos.png" alt="Audífonos">
+            <div class="category-tile-texto">
+                <h3>Audífonos</h3>
+                <span>Ver productos</span>
+            </div>
+        </a>
+
+        <a href="productos.html?categoria=Accesorios" class="category-tile">
+            <img src="images/Accesorios.png" alt="Accesorios">
+            <div class="category-tile-texto">
+                <h3>Accesorios</h3>
+                <span>Ver productos</span>
+            </div>
+        </a>
+
+        <a href="productos.html?categoria=Tablets" class="category-tile">
+            <img src="images/iPad_Air_Wi-Fi.png" alt="Tablets">
+            <div class="category-tile-texto">
+                <h3>Tablets</h3>
+                <span>Ver productos</span>
+            </div>
+        </a>
+
+    </div>
+
+</section>
+
+<section class="products">
+
+    <h2 class="section-title">Productos Destacados</h2>
+
+    <div class="product-grid" data-destacados="true">
+
+        <!-- Las tarjetas de producto se generan dinámicamente desde js/app.js -->
+
+    </div>
+
+</section>
+
+
+    <footer class="footer">
+
+    <div class="footer-content">
+
+        <div class="footer-brand">
+            <h3>NovaTech Store</h3>
+            <p>Tecnología que impulsa tu futuro.</p>
+        </div>
+
+        <div class="footer-links">
+            <h4>Navegación</h4>
+            <a href="index.html">Inicio</a>
+            <a href="productos.html">Productos</a>
+            <a href="ofertas.html">Ofertas</a>
+            <a href="nosotros.html">Nosotros</a>
+            <a href="politicas.html">Políticas</a>
+            <a href="contacto.html">Contacto</a>
+        </div>
+
+        <div class="footer-social">
+            <h4>Síguenos</h4>
+            <div class="footer-social-icons">
+                <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                <a href="#"><i class="fa-brands fa-tiktok"></i></a>
+            </div>
+        </div>
+
+    </div>
+
+    <p class="footer-copy">&copy; 2026 NovaTech Store. Todos los derechos reservados.</p>
+
+</footer>
+
+    <script src="js/notify.js"></script>
+<script src="js/cart.js"></script>
+    <script src="js/favoritos.js"></script>
+<script src="js/app.js"></script>
+    <script src="js/auth.js"></script>
+<script src="js/navbar.js"></script>
+
+       <a href="https://wa.me/573044647130?text=Hola%2C%20tengo%20una%20pregunta%20sobre%20un%20producto%20de%20NovaTech%20Store" class="whatsapp-float" target="_blank" rel="noopener" aria-label="Escríbenos por WhatsApp">
+    <i class="fa-brands fa-whatsapp"></i>
+</a>
+
+</body>
+       </html>

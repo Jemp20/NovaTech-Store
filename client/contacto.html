@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Contacto | NovaTech Store</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@600;700;800;900&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="css/navbar.css">
+        <link rel="stylesheet" href="css/auth.css">
+        <link rel="stylesheet" href="css/notify.css">
+        <link rel="stylesheet" href="css/contact.css">
+        <link rel="stylesheet" href="css/whatsapp-float.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+        <style>
+            .contact-section{
+    max-width:1200px;
+    margin:auto;
+    padding:90px 8%;
+    display:grid;
+    grid-template-columns:1fr 500px;
+    gap:70px;
+    align-items:center;
+}
+
+.contact-info h1{
+    font-size:3rem;
+    margin:20px 0;
+    color:#fff;
+}
+
+.contact-info p{
+    color:#cbd5e1;
+    line-height:1.8;
+    margin-bottom:35px;
+}
+
+.contact-item{
+    display:flex;
+    align-items:center;
+    gap:15px;
+    margin-bottom:20px;
+    color:#fff;
+    font-size:18px;
+}
+
+.contact-item i{
+    width:50px;
+    height:50px;
+    border-radius:50%;
+    background:#2563eb;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:#fff;
+}
+
+.contact-form{
+    background:#fff;
+    border-radius:20px;
+    padding:40px;
+    box-shadow:0 20px 60px rgba(0,0,0,.15);
+}
+
+.contact-form h2{
+    margin-bottom:30px;
+    font-size:28px;
+    color:#111827;
+}
+
+.contact-form div{
+    margin-bottom:20px;
+}
+
+.contact-form label{
+    display:block;
+    margin-bottom:8px;
+    font-weight:600;
+}
+
+.contact-form input,
+.contact-form textarea{
+    width:100%;
+    padding:14px 16px;
+    border:1px solid #d1d5db;
+    border-radius:10px;
+    font-size:15px;
+    font-family:inherit;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus{
+    outline:none;
+    border-color:#2563eb;
+    box-shadow:0 0 0 4px rgba(37,99,235,.15);
+}
+
+.contact-form textarea{
+    min-height:140px;
+    resize:vertical;
+}
+
+@media(max-width:900px){
+
+.contact-section{
+    grid-template-columns:1fr;
+}
+
+.contact-info{
+    text-align:center;
+}
+
+.contact-item{
+    justify-content:center;
+}
+
+.contact-info h1{
+    font-size:2.3rem;
+}
+
+}
+        </style>
+        <script>
+        // Aplica el tema guardado ANTES de pintar la página, para evitar parpadeo
+        (function () {
+            var tema = localStorage.getItem("novatech-tema") || "dark";
+            document.documentElement.setAttribute("data-theme", tema);
+        })();
+    </script>
+</head>
+    <body>
+
+<header>
+<nav class="navbar">
+
+    <div class="nav-left">
+        <i class="fa-solid fa-bars" id="menu-toggle"></i>
+        <i class="fa-solid fa-moon" id="theme-toggle" title="Cambiar tema"></i>
+    </div>
+
+    <a href="index.html" class="logo">
+        <img src="images/logo-transparente.png" alt="NovaTech Store" class="logo-img">
+    </a>
+
+    <ul class="menu" id="menu">
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="productos.html">Productos</a></li>
+        <li><a href="ofertas.html">Ofertas</a></li>
+        <li><a href="nosotros.html">Nosotros</a></li>
+        <li><a href="politicas.html">Políticas</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+    </ul>
+
+    <div class="nav-icons">
+
+    <a href="carrito.html" class="cart-icon-wrapper">
+        <i class="fa-solid fa-cart-shopping"></i>
+        <span id="cart-badge" class="cart-badge">0</span>
+    </a>
+
+    <div class="user-wrapper">
+        <i class="fa-solid fa-circle-user" id="user-toggle"></i>
+        <div class="user-dropdown" id="user-dropdown">
+            <div id="nav-account-slot"></div>
+        </div>
+    </div>
+
+    <div class="search-wrapper">
+        <i class="fa-solid fa-magnifying-glass" id="search-toggle"></i>
+        <div class="search-box" id="search-box">
+            <input type="text" id="search-input" placeholder="Buscar productos...">
+        </div>
+    </div>
+
+</div>
+
+</nav>
+</header>
+
+<section class="contact-section">
+
+    <div class="contact-info">
+
+        <span class="tag">CONTACTO</span>
+
+        <h1>Estamos para ayudarte.</h1>
+
+        <p>
+            ¿Tienes preguntas sobre un producto, un pedido o una garantía?
+            Escríbenos y nuestro equipo te responderá lo antes posible.
+        </p>
+
+        <div class="contact-item">
+            <i class="fa-solid fa-phone"></i>
+            <span>+57 300 123 4567</span>
+        </div>
+
+        <div class="contact-item">
+            <i class="fa-solid fa-envelope"></i>
+            <span>soporte@novatech.com</span>
+        </div>
+
+        <div class="contact-item">
+            <i class="fa-solid fa-location-dot"></i>
+            <span>Barranquilla, Colombia</span>
+        </div>
+
+    </div>
+
+    <form class="contact-form" id="contact-form">
+
+        <h2>Envíanos un mensaje</h2>
+
+        <div>
+            <label>Nombre</label>
+            <input type="text" placeholder="Tu nombre" required>
+        </div>
+
+        <div>
+            <label>Correo electrónico</label>
+            <input type="email" placeholder="tucorreo@ejemplo.com" required>
+        </div>
+
+        <div>
+            <label>Mensaje</label>
+            <textarea placeholder="¿En qué podemos ayudarte?" required></textarea>
+        </div>
+
+        <button class="btn">Enviar mensaje</button>
+
+    </form>
+
+</section>
+
+<footer class="footer">
+
+    <div class="footer-content">
+
+        <div class="footer-brand">
+            <h3>NovaTech Store</h3>
+            <p>Tecnología que impulsa tu futuro.</p>
+        </div>
+
+        <div class="footer-links">
+            <h4>Navegación</h4>
+            <a href="index.html">Inicio</a>
+            <a href="productos.html">Productos</a>
+            <a href="ofertas.html">Ofertas</a>
+            <a href="nosotros.html">Nosotros</a>
+            <a href="politicas.html">Políticas</a>
+            <a href="contacto.html">Contacto</a>
+        </div>
+
+        <div class="footer-social">
+            <h4>Síguenos</h4>
+            <div class="footer-social-icons">
+                <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                <a href="#"><i class="fa-brands fa-tiktok"></i></a>
+            </div>
+        </div>
+
+    </div>
+
+    <p class="footer-copy">&copy; 2026 NovaTech Store. Todos los derechos reservados.</p>
+
+</footer>
+
+    <script src="js/notify.js"></script>
+    <script src="js/cart.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/navbar.js"></script>
+
+    <a href="https://wa.me/573044647130?text=Hola%2C%20tengo%20una%20pregunta%20sobre%20un%20producto%20de%20NovaTech%20Store" class="whatsapp-float" target="_blank" rel="noopener" aria-label="Escríbenos por WhatsApp">
+    <i class="fa-brands fa-whatsapp"></i>
+</a>
+
+</body>
+</html>

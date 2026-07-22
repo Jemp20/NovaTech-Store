@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Políticas | NovaTech Store</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@600;700;800;900&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="css/navbar.css">
+        <link rel="stylesheet" href="css/auth.css">
+        <link rel="stylesheet" href="css/notify.css">
+        <link rel="stylesheet" href="css/products.css">
+        <link rel="stylesheet" href="css/paginas.css">
+        <link rel="stylesheet" href="css/whatsapp-float.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+        <script>
+        // Aplica el tema guardado ANTES de pintar la página, para evitar parpadeo
+        (function () {
+            var tema = localStorage.getItem("novatech-tema") || "dark";
+            document.documentElement.setAttribute("data-theme", tema);
+        })();
+    </script>
+</head>
+    <body>
+
+<header>
+<nav class="navbar">
+
+    <div class="nav-left">
+        <i class="fa-solid fa-bars" id="menu-toggle"></i>
+        <i class="fa-solid fa-moon" id="theme-toggle" title="Cambiar tema"></i>
+    </div>
+
+    <a href="index.html" class="logo">
+        <img src="images/logo-transparente.png" alt="NovaTech Store" class="logo-img">
+    </a>
+
+    <ul class="menu" id="menu">
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="productos.html">Productos</a></li>
+        <li><a href="ofertas.html">Ofertas</a></li>
+        <li><a href="nosotros.html">Nosotros</a></li>
+        <li><a href="politicas.html">Políticas</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+    </ul>
+
+    <div class="nav-icons">
+
+    <a href="carrito.html" class="cart-icon-wrapper">
+        <i class="fa-solid fa-cart-shopping"></i>
+        <span id="cart-badge" class="cart-badge">0</span>
+    </a>
+
+    <div class="user-wrapper">
+        <i class="fa-solid fa-circle-user" id="user-toggle"></i>
+        <div class="user-dropdown" id="user-dropdown">
+            <div id="nav-account-slot"></div>
+        </div>
+    </div>
+
+    <div class="search-wrapper">
+        <i class="fa-solid fa-magnifying-glass" id="search-toggle"></i>
+        <div class="search-box" id="search-box">
+            <input type="text" id="search-input" placeholder="Buscar productos...">
+        </div>
+    </div>
+
+</div>
+
+</nav>
+</header>
+
+<!-- HERO -->
+<section class="page-hero">
+    <span class="tag">Información para ti</span>
+    <h1>Políticas de <span>la tienda.</span></h1>
+    <p>Todo lo que necesitas saber sobre envíos, devoluciones, garantía y pagos, explicado de forma clara y sin letra pequeña.</p>
+</section>
+
+<section class="page-section">
+
+    <!-- Navegación rápida entre categorías -->
+    <div class="politicas-nav">
+        <a href="#envios"><i class="fa-solid fa-truck-fast"></i> Envíos</a>
+        <a href="#devoluciones"><i class="fa-solid fa-rotate-left"></i> Devoluciones y cambios</a>
+        <a href="#garantia"><i class="fa-solid fa-shield-halved"></i> Garantía</a>
+        <a href="#pagos"><i class="fa-solid fa-credit-card"></i> Métodos de pago</a>
+        <a href="#terminos"><i class="fa-solid fa-file-contract"></i> Términos y condiciones</a>
+        <a href="#privacidad"><i class="fa-solid fa-user-shield"></i> Privacidad y datos</a>
+    </div>
+
+    <div class="acordeon">
+
+        <!-- ENVÍOS -->
+        <div class="acordeon-item abierto" id="envios">
+            <button class="acordeon-pregunta" type="button">
+                <span><i class="fa-solid fa-truck-fast"></i>&nbsp;&nbsp;Envíos</span>
+                <i class="fa-solid fa-chevron-down"></i>
+            </button>
+            <div class="acordeon-respuesta">
+                <div class="acordeon-respuesta-inner">
+                    <p>Despachamos a todo el territorio colombiano a través de nuestros transportadores aliados.</p>
+                    <ul>
+                        <li><strong>Tiempo de despacho:</strong> tu pedido se prepara en un plazo de 1 a 2 días hábiles después de confirmado el pago.</li>
+                        <li><strong>Tiempo de entrega:</strong> entre 2 y 5 días hábiles en ciudades principales, y de 4 a 8 días hábiles en otros municipios.</li>
+                        <li><strong>Seguimiento:</strong> te avisamos por correo cuando tu pedido cambia de estado; también puedes consultarlo desde <a href="mis-pedidos.html" style="color:var(--primary)">Mis pedidos</a>.</li>
+                        <li><strong>Costo de envío:</strong> se calcula según tu ciudad y se muestra antes de confirmar la compra, sin cargos ocultos.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- DEVOLUCIONES -->
+        <div class="acordeon-item" id="devoluciones">
+            <button class="acordeon-pregunta" type="button">
+                <span><i class="fa-solid fa-rotate-left"></i>&nbsp;&nbsp;Devoluciones y cambios</span>
+                <i class="fa-solid fa-chevron-down"></i>
+            </button>
+            <div class="acordeon-respuesta">
+                <div class="acordeon-respuesta-inner">
+                    <p>Queremos que quedes conforme con tu compra. Si algo no sale como esperabas, esto es lo que puedes hacer:</p>
+                    <ul>
+                        <li>Cuentas con <strong>5 días calendario</strong> después de recibir tu pedido para solicitar un cambio o devolución.</li>
+                        <li>El producto debe estar sin uso, en su empaque original y con todos sus accesorios.</li>
+                        <li>Para iniciar el proceso, escríbenos por <a href="https://wa.me/573044647130" style="color:var(--primary)" target="_blank" rel="noopener">WhatsApp</a> o desde la página de <a href="contacto.html" style="color:var(--primary)">Contacto</a> indicando tu número de pedido.</li>
+                        <li>Si la devolución se debe a un error nuestro (producto equivocado o defectuoso de fábrica), el costo de envío de regreso corre por nuestra cuenta.</li>
+                        <li>Una vez recibido y verificado el producto, procesamos el reembolso o cambio en un plazo máximo de 5 días hábiles.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- GARANTÍA -->
+        <div class="acordeon-item" id="garantia">
+            <button class="acordeon-pregunta" type="button">
+                <span><i class="fa-solid fa-shield-halved"></i>&nbsp;&nbsp;Garantía</span>
+                <i class="fa-solid fa-chevron-down"></i>
+            </button>
+            <div class="acordeon-respuesta">
+                <div class="acordeon-respuesta-inner">
+                    <p>Todos nuestros productos son 100% originales y cuentan con garantía.</p>
+                    <ul>
+                        <li><strong>Duración:</strong> la garantía oficial del fabricante aplica según cada producto (normalmente entre 6 y 12 meses).</li>
+                        <li><strong>Cobertura:</strong> defectos de fabricación en condiciones normales de uso.</li>
+                        <li><strong>No cubre:</strong> daños por mal uso, golpes, líquidos, o intervención de servicios técnicos no autorizados.</li>
+                        <li><strong>Cómo hacerla efectiva:</strong> contáctanos con tu número de pedido o factura; te orientamos según la marca si aplica garantía directa con el fabricante o a través de nosotros.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- MÉTODOS DE PAGO -->
+        <div class="acordeon-item" id="pagos">
+            <button class="acordeon-pregunta" type="button">
+                <span><i class="fa-solid fa-credit-card"></i>&nbsp;&nbsp;Métodos de pago</span>
+                <i class="fa-solid fa-chevron-down"></i>
+            </button>
+            <div class="acordeon-respuesta">
+                <div class="acordeon-respuesta-inner">
+                    <p>Ponemos a tu disposición varias formas de pago para que elijas la que más te convenga:</p>
+                    <ul>
+                        <li><strong>Pago en línea:</strong> tarjetas de crédito/débito, PSE y otros medios digitales, procesados de forma segura a través de nuestra pasarela de pagos.</li>
+                        <li><strong>Pago contra entrega:</strong> disponible en ciudades seleccionadas, pagas en efectivo o con datáfono cuando recibes tu pedido.</li>
+                    </ul>
+                    <p>Todas las transacciones en línea están cifradas y protegidas; NovaTech Store nunca almacena los datos completos de tu tarjeta.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- TÉRMINOS Y CONDICIONES -->
+        <div class="acordeon-item" id="terminos">
+            <button class="acordeon-pregunta" type="button">
+                <span><i class="fa-solid fa-file-contract"></i>&nbsp;&nbsp;Términos y condiciones</span>
+                <i class="fa-solid fa-chevron-down"></i>
+            </button>
+            <div class="acordeon-respuesta">
+                <div class="acordeon-respuesta-inner">
+                    <p>Al usar y comprar en NovaTech Store, aceptas estas condiciones:</p>
+                    <ul>
+                        <li><strong>Sobre los productos:</strong> hacemos todo lo posible para que las descripciones, precios e imágenes sean exactos. Si detectamos un error de precio o disponibilidad después de tu compra, te contactaremos antes de procesar el pedido.</li>
+                        <li><strong>Cuenta de usuario:</strong> eres responsable de mantener la confidencialidad de tu contraseña y de toda actividad realizada desde tu cuenta.</li>
+                        <li><strong>Uso permitido del sitio:</strong> no está permitido usar la tienda para fines fraudulentos, intentar vulnerar su seguridad, ni copiar o reutilizar su contenido (textos, imágenes, marca) sin autorización.</li>
+                        <li><strong>Disponibilidad:</strong> los precios y el stock pueden cambiar sin previo aviso; el precio válido es el que aparece confirmado al momento de finalizar tu compra.</li>
+                        <li><strong>Limitación de responsabilidad:</strong> NovaTech Store no se hace responsable por retrasos causados por transportadoras, fuerza mayor, o por el uso indebido de los productos una vez entregados.</li>
+                        <li><strong>Cambios en estos términos:</strong> podemos actualizar estos términos ocasionalmente; la fecha de la versión vigente siempre estará visible en esta página.</li>
+                    </ul>
+                    <p style="margin-top:12px; font-size:13px; color:var(--text-muted)">Última actualización: julio de 2026.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- PRIVACIDAD Y DATOS -->
+        <div class="acordeon-item" id="privacidad">
+            <button class="acordeon-pregunta" type="button">
+                <span><i class="fa-solid fa-user-shield"></i>&nbsp;&nbsp;Privacidad y tratamiento de datos</span>
+                <i class="fa-solid fa-chevron-down"></i>
+            </button>
+            <div class="acordeon-respuesta">
+                <div class="acordeon-respuesta-inner">
+                    <p>En NovaTech Store protegemos tus datos personales conforme a la <strong>Ley 1581 de 2012</strong> y demás normas colombianas sobre protección de datos (Habeas Data).</p>
+                    <ul>
+                        <li><strong>Qué datos recogemos:</strong> nombre, correo, teléfono, dirección de envío, ciudad, documento de identidad y datos de tu pedido. Al pagar en línea, los datos de tu tarjeta son procesados directamente por nuestra pasarela de pagos; NovaTech Store nunca los almacena.</li>
+                        <li><strong>Para qué los usamos:</strong> procesar y entregar tus pedidos, contactarte sobre el estado de tu compra, verificar tu identidad en pagos contraentrega, y brindarte soporte por WhatsApp o correo.</li>
+                        <li><strong>Con quién los compartimos:</strong> solo con las transportadoras (para la entrega) y la pasarela de pagos (para procesar tu compra). No vendemos ni compartimos tus datos con terceros para fines publicitarios.</li>
+                        <li><strong>Tus derechos:</strong> puedes conocer, actualizar, corregir o solicitar la eliminación de tus datos personales en cualquier momento, escribiéndonos por <a href="https://wa.me/573044647130" style="color:var(--primary)" target="_blank" rel="noopener">WhatsApp</a> o desde <a href="contacto.html" style="color:var(--primary)">Contacto</a>.</li>
+                        <li><strong>Seguridad:</strong> tu contraseña se almacena cifrada y las conexiones a nuestro sitio están protegidas.</li>
+                        <li><strong>Cookies:</strong> usamos almacenamiento local únicamente para funciones básicas del sitio, como mantener tu sesión y tu carrito de compras — no usamos cookies de rastreo publicitario de terceros.</li>
+                    </ul>
+                    <p style="margin-top:12px; font-size:13px; color:var(--text-muted)">Última actualización: julio de 2026.</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<!-- CTA -->
+<section class="page-section alt">
+    <div class="page-cta">
+        <h2>¿Aún tienes dudas?</h2>
+        <p>Nuestro equipo está listo para ayudarte con cualquier pregunta sobre tu pedido, envío o garantía.</p>
+        <a href="contacto.html" class="btn">Contáctanos</a>
+    </div>
+</section>
+
+<footer class="footer">
+
+    <div class="footer-content">
+
+        <div class="footer-brand">
+            <h3>NovaTech Store</h3>
+            <p>Tecnología que impulsa tu futuro.</p>
+        </div>
+
+        <div class="footer-links">
+            <h4>Navegación</h4>
+            <a href="index.html">Inicio</a>
+            <a href="productos.html">Productos</a>
+            <a href="ofertas.html">Ofertas</a>
+            <a href="nosotros.html">Nosotros</a>
+            <a href="politicas.html">Políticas</a>
+            <a href="contacto.html">Contacto</a>
+        </div>
+
+        <div class="footer-social">
+            <h4>Síguenos</h4>
+            <div class="footer-social-icons">
+                <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                <a href="#"><i class="fa-brands fa-tiktok"></i></a>
+            </div>
+        </div>
+
+    </div>
+
+    <p class="footer-copy">&copy; 2026 NovaTech Store. Todos los derechos reservados.</p>
+
+</footer>
+
+<script src="js/notify.js"></script>
+<script src="js/cart.js"></script>
+<script src="js/auth.js"></script>
+<script src="js/navbar.js"></script>
+
+<script>
+    // Acordeón de políticas: abre/cierra secciones y permite enlaces directos (#envios, #garantia, etc.)
+    document.querySelectorAll(".acordeon-item").forEach(item => {
+        const pregunta = item.querySelector(".acordeon-pregunta");
+        const respuesta = item.querySelector(".acordeon-respuesta");
+
+        function abrir(){
+            item.classList.add("abierto");
+            respuesta.style.maxHeight = respuesta.scrollHeight + "px";
+        }
+
+        function cerrar(){
+            item.classList.remove("abierto");
+            respuesta.style.maxHeight = null;
+        }
+
+        if (item.classList.contains("abierto")) abrir();
+
+        pregunta.addEventListener("click", () => {
+            item.classList.contains("abierto") ? cerrar() : abrir();
+        });
+    });
+
+    // Si se llega con un ancla (ej. politicas.html#garantia), abre esa sección
+    if (window.location.hash) {
+        const objetivo = document.querySelector(window.location.hash);
+        if (objetivo && objetivo.classList.contains("acordeon-item")) {
+            objetivo.classList.add("abierto");
+            const respuesta = objetivo.querySelector(".acordeon-respuesta");
+            respuesta.style.maxHeight = respuesta.scrollHeight + "px";
+            setTimeout(() => objetivo.scrollIntoView({ behavior: "smooth", block: "start" }), 100);
+        }
+    }
+</script>
+
+    <a href="https://wa.me/573044647130?text=Hola%2C%20tengo%20una%20pregunta%20sobre%20un%20producto%20de%20NovaTech%20Store" class="whatsapp-float" target="_blank" rel="noopener" aria-label="Escríbenos por WhatsApp">
+    <i class="fa-brands fa-whatsapp"></i>
+</a>
+
+</body>
+</html>

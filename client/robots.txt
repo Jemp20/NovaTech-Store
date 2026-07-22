@@ -1,0 +1,11 @@
+User-agent: *
+Allow: /
+Disallow: /admin.html
+Disallow: /login.html
+Disallow: /registro.html
+Disallow: /carrito.html
+Disallow: /favoritos.html
+Disallow: /mis-pedidos.html
+Disallow: /pedido-confirmado.html
+
+Sitemap: https://novatech-store.onrender.com/sitemap.xml

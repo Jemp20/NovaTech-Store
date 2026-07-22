@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <link rel="icon" type="image/png" href="images/logo-transparente.png">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Panel de administración · NovaTech Store</title>
+        <meta name="description" content="Panel de administración de NovaTech Store.">
+        <meta name="robots" content="noindex, nofollow">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@600;700;800;900&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="css/navbar.css">
+        <link rel="stylesheet" href="css/auth.css">
+        <link rel="stylesheet" href="css/notify.css">
+        <link rel="stylesheet" href="css/admin.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+           <script>
+        // Aplica el tema guardado ANTES de pintar la página, para evitar parpadeo
+        (function () {
+            var tema = localStorage.getItem("novatech-tema") || "dark";
+            document.documentElement.setAttribute("data-theme", tema);
+        })();
+    </script>
+</head>
+       <body>
+
+<header>
+
+<nav class="navbar">
+
+    <div class="nav-left">
+        <i class="fa-solid fa-bars" id="menu-toggle"></i>
+        <i class="fa-solid fa-moon" id="theme-toggle" title="Cambiar tema"></i>
+    </div>
+
+    <a href="index.html" class="logo">
+        <img src="images/logo-transparente.png" alt="NovaTech Store" class="logo-img">
+    </a>
+
+    <ul class="menu" id="menu">
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="productos.html">Productos</a></li>
+        <li><a href="ofertas.html">Ofertas</a></li>
+        <li><a href="nosotros.html">Nosotros</a></li>
+        <li><a href="politicas.html">Políticas</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+    </ul>
+
+    <div class="nav-icons">
+        <div class="user-wrapper">
+            <i class="fa-solid fa-circle-user" id="user-toggle"></i>
+            <div class="user-dropdown" id="user-dropdown">
+                <div id="nav-account-slot"></div>
+            </div>
+        </div>
+    </div>
+
+</nav>
+
+    </header>
+
+<!-- Se muestra si el usuario no es admin -->
+<div class="admin-denegado" id="admin-denegado" style="display:none;">
+    <h2>Acceso restringido</h2>
+    <p>Esta sección es solo para administradores. Inicia sesión con una cuenta de admin para continuar.</p>
+    <a href="login.html" class="btn">Ir a login</a>
+</div>
+
+<!-- Panel real, se muestra si el usuario es admin -->
+<section class="admin-section" id="admin-content" style="display:none;">
+
+    <div class="admin-header">
+        <div>
+            <h2>Panel de administración</h2>
+            <p>Gestiona productos, pedidos, pagos, clientes y cupones de la tienda.</p>
+        </div>
+    </div>
+
+    <div class="admin-tabs">
+        <button class="admin-tab active" data-tab="productos">Productos</button>
+        <button class="admin-tab" data-tab="categorias">Categorías</button>
+        <button class="admin-tab" data-tab="pedidos">Pedidos</button>
+        <button class="admin-tab" data-tab="pagos">Pagos</button>
+        <button class="admin-tab" data-tab="clientes">Clientes</button>
+        <button class="admin-tab" data-tab="estadisticas">Estadísticas</button>
+        <button class="admin-tab" data-tab="cupones">Cupones</button>
+        <button class="admin-tab" data-tab="resenas">Reseñas</button>
+    </div>
+
+    <!-- Panel de productos -->
+    <div class="admin-panel active" id="panel-productos">
+
+        <div class="admin-toolbar">
+            <button class="btn" id="btn-nuevo-producto">
+                <i class="fa-solid fa-plus"></i> Nuevo producto
+            </button>
+        </div>
+
+        <div class="admin-table-wrapper">
+            <table class="admin-table">
+                <thead>
+                    <tr>
+                        <th>Imagen</th>
+                        <th>Nombre</th>
+                        <th>Categoría</th>
+                        <th>Precio</th>
+                        <th>Stock</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody id="tabla-productos">
+                    <!-- Filas generadas dinámicamente -->
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+
+    <!-- Panel de categorías -->
+    <div class="admin-panel" id="panel-categorias">
+
+        <div class="admin-toolbar">
+            <button class="btn" id="btn-nueva-categoria">
+                <i class="fa-solid fa-plus"></i> Nueva categoría
+            </button>
+        </div>
+
+        <div class="admin-table-wrapper">
+            <table class="admin-table">
+                <thead>
+                    <tr>
+                        <th>Nombre</th>
+                        <th>Slug</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody id="tabla-categorias">
+                    <!-- Filas generadas dinámicamente -->
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+
+    <!-- Panel de pedidos -->
+    <div class="admin-panel" id="panel-pedidos">
+        <div class="admin-table-wrapper">
+            <table class="admin-table">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Cliente</th>
+                        <th>Total</th>
+                        <th>Pago</th>
+                        <th>Estado</th>
+                        <th>Fecha</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody id="tabla-pedidos">
+                    <!-- Filas generadas dinámicamente -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Panel de pagos -->
+    <div class="admin-panel" id="panel-pagos">
+        <div class="admin-table-wrapper">
+            <table class="admin-table">
+                <thead>
+                    <tr>
+                        <th>Pedido</th>
+                        <th>Cliente</th>
+                        <th>Monto</th>
+                        <th>Método</th>
+                        <th>Estado</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody id="tabla-pagos">
+                    <!-- Filas generadas dinámicamente -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Panel de clientes -->
+    <div class="admin-panel" id="panel-clientes">
+        <div class="admin-table-wrapper">
+            <table class="admin-table">
+                <thead>
+                    <tr>
+                        <th>Nombre</th>
+                        <th>Email</th>
+                        <th>Rol</th>
+                        <th>Pedidos</th>
+                        <th>Total comprado</th>
+                        <th>Registrado</th>
+                    </tr>
+                </thead>
+                <tbody id="tabla-clientes">
+                    <!-- Filas generadas dinámicamente -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Panel de estadísticas -->
+    <div class="admin-panel" id="panel-estadisticas">
+        <div class="admin-stats-grid" id="admin-stats-grid">
+            <!-- Tarjetas generadas dinámicamente -->
+        </div>
+
+        <div class="admin-table-wrapper" style="margin-top:24px;">
+            <table class="admin-table">
+                <thead>
+                    <tr>
+                        <th>Producto</th>
+                        <th>Unidades vendidas</th>
+                    </tr>
+                </thead>
+                <tbody id="tabla-mas-vendidos">
+                    <!-- Filas generadas dinámicamente -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Panel de cupones -->
+    <div class="admin-panel" id="panel-cupones">
+
+        <div class="admin-toolbar">
+            <button class="btn" id="btn-nuevo-cupon">
+                <i class="fa-solid fa-plus"></i> Nuevo cupón
+            </button>
+        </div>
+
+        <div class="admin-table-wrapper">
+            <table class="admin-table">
+                <thead>
+                    <tr>
+                        <th>Código</th>
+                        <th>Descuento</th>
+                        <th>Vence</th>
+                        <th>Activo</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody id="tabla-cupones">
+                    <!-- Filas generadas dinámicamente -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div class="admin-panel" id="panel-resenas">
+        <div class="admin-table-wrapper">
+            <table class="admin-table">
+                <thead>
+                    <tr>
+                        <th>Producto</th>
+                        <th>Cliente</th>
+                        <th>Calificación</th>
+                        <th>Comentario</th>
+                        <th>Verificada</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody id="tabla-resenas">
+                    <!-- Filas generadas dinámicamente -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+</section>
+
+<!-- Modal: crear/editar producto -->
+<div class="admin-modal-overlay" id="modal-producto">
+    <div class="admin-modal">
+        <h3 id="modal-producto-titulo">Nuevo producto</h3>
+
+        <div class="admin-msg" id="modal-producto-msg"></div>
+
+        <form class="admin-form" id="form-producto">
+            <input type="hidden" id="producto-id">
+
+            <div class="admin-field">
+                <label for="producto-nombre">Nombre</label>
+                <input type="text" id="producto-nombre" required>
+            </div>
+
+            <div class="admin-field">
+                <label for="producto-descripcion">Descripción</label>
+                <textarea id="producto-descripcion"></textarea>
+            </div>
+
+            <div class="admin-form-row">
+                <div class="admin-field">
+                    <label for="producto-precio">Precio (COP)</label>
+                    <input type="number" id="producto-precio" min="0" required>
+                </div>
+                <div class="admin-field">
+                    <label for="producto-stock">Stock</label>
+                    <input type="number" id="producto-stock" min="0" value="0">
+                </div>
+            </div>
+
+            <div class="admin-field">
+                <label for="producto-categoria">Categoría</label>
+                <select id="producto-categoria"></select>
+            </div>
+
+            <div class="admin-field">
+                <label for="producto-imagen-file">Imagen del producto</label>
+                <input type="file" id="producto-imagen-file" accept="image/png, image/jpeg, image/webp, image/gif">
+                <img id="producto-imagen-preview" src="" alt="Vista previa" style="display:none; margin-top:8px; width:90px; height:90px; object-fit:cover; border-radius:8px;">
+                <input type="hidden" id="producto-imagen">
+            </div>
+
+            <div class="admin-field admin-field-checkbox">
+                <label>
+                    <input type="checkbox" id="producto-destacado">
+                    Producto destacado
+                </label>
+            </div>
+
+            <div class="admin-field">
+                <label>Especificaciones técnicas (opcional)</label>
+                <div id="lista-especificaciones" class="admin-specs-lista">
+                    <!-- Filas generadas dinámicamente: Nombre / Valor -->
+                </div>
+                <button type="button" class="admin-btn-cancel admin-btn-add-spec" id="btn-agregar-spec">
+                    <i class="fa-solid fa-plus"></i> Agregar especificación
+                </button>
+            </div>
+
+            <div class="admin-form-actions">
+                <button type="button" class="admin-btn-cancel" id="cancelar-producto">Cancelar</button>
+                <button type="submit" class="btn">Guardar</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<!-- Modal: crear/editar categoría -->
+<div class="admin-modal-overlay" id="modal-categoria">
+    <div class="admin-modal">
+        <h3 id="modal-categoria-titulo">Nueva categoría</h3>
+
+        <div class="admin-msg" id="modal-categoria-msg"></div>
+
+        <form class="admin-form" id="form-categoria">
+            <input type="hidden" id="categoria-id">
+
+            <div class="admin-field">
+                <label for="categoria-nombre">Nombre</label>
+                <input type="text" id="categoria-nombre" required>
+            </div>
+
+            <div class="admin-field">
+                <label for="categoria-slug">Slug (usado en filtros de URL)</label>
+                <input type="text" id="categoria-slug" placeholder="ej: audio" required>
+            </div>
+
+            <div class="admin-form-actions">
+                <button type="button" class="admin-btn-cancel" id="cancelar-categoria">Cancelar</button>
+                <button type="submit" class="btn">Guardar</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+    <!-- Modal: crear/editar cupón -->
+    <div class="admin-modal-overlay" id="modal-cupon">
+        <div class="admin-modal">
+            <h3 id="modal-cupon-titulo">Nuevo cupón</h3>
+
+            <div class="admin-msg" id="modal-cupon-msg"></div>
+
+            <form class="admin-form" id="form-cupon">
+                <input type="hidden" id="cupon-id">
+
+                <div class="admin-field">
+                    <label for="cupon-codigo">Código</label>
+                    <input type="text" id="cupon-codigo" placeholder="ej: VERANO20" required>
+                </div>
+
+                <div class="admin-form-row">
+                    <div class="admin-field">
+                        <label for="cupon-descuento">Descuento (%)</label>
+                        <input type="number" id="cupon-descuento" min="1" max="100" required>
+                    </div>
+                    <div class="admin-field">
+                        <label for="cupon-expiracion">Fecha de expiración</label>
+                        <input type="date" id="cupon-expiracion">
+                    </div>
+                </div>
+
+                <div class="admin-field admin-field-checkbox">
+                    <label>
+                        <input type="checkbox" id="cupon-activo" checked>
+                        Cupón activo
+                    </label>
+                </div>
+
+                <div class="admin-form-actions">
+                    <button type="button" class="admin-btn-cancel" id="cancelar-cupon">Cancelar</button>
+                    <button type="submit" class="btn">Guardar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="js/notify.js"></script>
+<script src="js/auth.js"></script>
+    <script src="js/admin.js"></script>
+    <script src="js/admin-alertas.js"></script>
+    <script src="js/navbar.js"></script>
+
+       </body>
+       </html>

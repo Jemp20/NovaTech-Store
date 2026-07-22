@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Nosotros | NovaTech Store</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@600;700;800;900&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="css/navbar.css">
+        <link rel="stylesheet" href="css/auth.css">
+        <link rel="stylesheet" href="css/notify.css">
+        <link rel="stylesheet" href="css/products.css">
+        <link rel="stylesheet" href="css/paginas.css">
+        <link rel="stylesheet" href="css/whatsapp-float.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+        <script>
+        // Aplica el tema guardado ANTES de pintar la página, para evitar parpadeo
+        (function () {
+            var tema = localStorage.getItem("novatech-tema") || "dark";
+            document.documentElement.setAttribute("data-theme", tema);
+        })();
+    </script>
+</head>
+    <body>
+
+<header>
+<nav class="navbar">
+
+    <div class="nav-left">
+        <i class="fa-solid fa-bars" id="menu-toggle"></i>
+        <i class="fa-solid fa-moon" id="theme-toggle" title="Cambiar tema"></i>
+    </div>
+
+    <a href="index.html" class="logo">
+        <img src="images/logo-transparente.png" alt="NovaTech Store" class="logo-img">
+    </a>
+
+    <ul class="menu" id="menu">
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="productos.html">Productos</a></li>
+        <li><a href="ofertas.html">Ofertas</a></li>
+        <li><a href="nosotros.html">Nosotros</a></li>
+        <li><a href="politicas.html">Políticas</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+    </ul>
+
+    <div class="nav-icons">
+
+    <a href="carrito.html" class="cart-icon-wrapper">
+        <i class="fa-solid fa-cart-shopping"></i>
+        <span id="cart-badge" class="cart-badge">0</span>
+    </a>
+
+    <div class="user-wrapper">
+        <i class="fa-solid fa-circle-user" id="user-toggle"></i>
+        <div class="user-dropdown" id="user-dropdown">
+            <div id="nav-account-slot"></div>
+        </div>
+    </div>
+
+    <div class="search-wrapper">
+        <i class="fa-solid fa-magnifying-glass" id="search-toggle"></i>
+        <div class="search-box" id="search-box">
+            <input type="text" id="search-input" placeholder="Buscar productos...">
+        </div>
+    </div>
+
+</div>
+
+</nav>
+</header>
+
+<!-- HERO -->
+<section class="page-hero">
+    <span class="tag">Nuestra historia</span>
+    <h1>Tecnología con <span>propósito.</span></h1>
+    <p>Somos NovaTech Store: un equipo colombiano apasionado por la tecnología, dedicado a llevarte productos originales, precios justos y un servicio en el que puedes confiar.</p>
+</section>
+
+<!-- HISTORIA -->
+<section class="page-section">
+    <div class="historia">
+        <div class="historia-texto">
+            <h2>Cómo empezamos</h2>
+            <p>NovaTech Store nació de una idea simple: comprar tecnología en Colombia no debería ser complicado, ni arriesgado. Empezamos como una pequeña tienda enfocada en accesorios, y con el tiempo fuimos ganando la confianza de cientos de clientes que buscaban algo que no siempre era fácil de encontrar: productos 100% originales, con garantía real y gente que responde cuando la necesitas.</p>
+            <p>Hoy seguimos con la misma esencia, pero con un catálogo mucho más amplio: smartphones, laptops, smartwatches, audio y accesorios de las marcas más reconocidas del mercado, todo respaldado por un equipo que entiende de tecnología y que está para ayudarte antes, durante y después de tu compra.</p>
+        </div>
+        <img src="images/Tienda.png" alt="Equipo NovaTech Store">
+    </div>
+</section>
+
+<!-- ESTADÍSTICAS -->
+<section class="page-section alt">
+    <div class="stats-bar">
+        <div class="stat-item">
+            <h3>+5.000</h3>
+            <span>Clientes felices</span>
+        </div>
+        <div class="stat-item">
+            <h3>+800</h3>
+            <span>Productos originales</span>
+        </div>
+        <div class="stat-item">
+            <h3>32</h3>
+            <span>Ciudades con envío</span>
+        </div>
+        <div class="stat-item">
+            <h3>4.8/5</h3>
+            <span>Calificación promedio</span>
+        </div>
+    </div>
+</section>
+
+<!-- MISIÓN / VISIÓN / VALORES -->
+<section class="page-section">
+    <div class="page-section-head">
+        <h2>Lo que nos mueve</h2>
+        <p>Estos son los principios que guían cada producto que vendemos y cada conversación que tenemos con nuestros clientes.</p>
+    </div>
+
+    <div class="valores-grid">
+        <div class="valor-card">
+            <i class="fa-solid fa-bullseye"></i>
+            <h3>Misión</h3>
+            <p>Acercar tecnología original y de calidad a más personas en Colombia, con procesos de compra simples, transparentes y seguros.</p>
+        </div>
+
+        <div class="valor-card">
+            <i class="fa-solid fa-eye"></i>
+            <h3>Visión</h3>
+            <p>Ser la tienda de tecnología online de referencia en el país, reconocida por su confiabilidad y por el trato cercano a sus clientes.</p>
+        </div>
+
+        <div class="valor-card">
+            <i class="fa-solid fa-shield-halved"></i>
+            <h3>Confianza</h3>
+            <p>Todo lo que vendemos es 100% original y cuenta con garantía oficial. Sin sorpresas, sin letra pequeña.</p>
+        </div>
+
+        <div class="valor-card">
+            <i class="fa-solid fa-bolt"></i>
+            <h3>Rapidez</h3>
+            <p>Procesamos y despachamos tus pedidos lo más pronto posible, con actualizaciones claras en cada paso.</p>
+        </div>
+
+        <div class="valor-card">
+            <i class="fa-solid fa-headset"></i>
+            <h3>Cercanía</h3>
+            <p>Nuestro equipo está disponible por WhatsApp y correo para resolver dudas antes y después de tu compra.</p>
+        </div>
+
+        <div class="valor-card">
+            <i class="fa-solid fa-leaf"></i>
+            <h3>Mejora continua</h3>
+            <p>Escuchamos a nuestros clientes y ajustamos nuestro catálogo y procesos constantemente para servirte mejor.</p>
+        </div>
+    </div>
+</section>
+
+<!-- CTA -->
+<section class="page-section alt">
+    <div class="page-cta">
+        <h2>¿Listo para encontrar tu próximo equipo?</h2>
+        <p>Explora nuestro catálogo completo y descubre por qué cientos de personas ya confían en NovaTech Store.</p>
+        <a href="productos.html" class="btn">Ver productos</a>
+    </div>
+</section>
+
+<footer class="footer">
+
+    <div class="footer-content">
+
+        <div class="footer-brand">
+            <h3>NovaTech Store</h3>
+            <p>Tecnología que impulsa tu futuro.</p>
+        </div>
+
+        <div class="footer-links">
+            <h4>Navegación</h4>
+            <a href="index.html">Inicio</a>
+            <a href="productos.html">Productos</a>
+            <a href="ofertas.html">Ofertas</a>
+            <a href="nosotros.html">Nosotros</a>
+            <a href="politicas.html">Políticas</a>
+            <a href="contacto.html">Contacto</a>
+        </div>
+
+        <div class="footer-social">
+            <h4>Síguenos</h4>
+            <div class="footer-social-icons">
+                <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                <a href="#"><i class="fa-brands fa-tiktok"></i></a>
+            </div>
+        </div>
+
+    </div>
+
+    <p class="footer-copy">&copy; 2026 NovaTech Store. Todos los derechos reservados.</p>
+
+</footer>
+
+<script src="js/notify.js"></script>
+<script src="js/cart.js"></script>
+<script src="js/auth.js"></script>
+<script src="js/navbar.js"></script>
+
+    <a href="https://wa.me/573044647130?text=Hola%2C%20tengo%20una%20pregunta%20sobre%20un%20producto%20de%20NovaTech%20Store" class="whatsapp-float" target="_blank" rel="noopener" aria-label="Escríbenos por WhatsApp">
+    <i class="fa-brands fa-whatsapp"></i>
+</a>
+
+</body>
+</html>
