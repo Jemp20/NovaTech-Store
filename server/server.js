@@ -19,14 +19,15 @@ const boldRoutes = require('./routes/bold');
 const app = express();
 
 app.use(cors());
-// Guardamos el cuerpo crudo (rawBody) porque el webhook de Bold necesita
-// los bytes exactos, tal cual llegaron, para verificar la firma.
+
 app.use(express.json({
-    verify: (req, res, buf) => { req.rawBody = buf; }
+    verify: (req, res, buf) => {
+        req.rawBody = buf;
+    }
 }));
+
 app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
-// Sirve la página web (client/) desde el mismo servidor, para que Bold pueda
-// redirigir de vuelta a una pantalla real después del pago (no solo a la API)
+
 app.use(express.static(path.join(__dirname, '..', 'client')));
 
 app.use('/api/productos', productosRoutes);
@@ -43,11 +44,9 @@ app.use('/api/resenas', resenasRoutes);
 app.use('/api/bold', boldRoutes);
 
 app.get('/', (req, res) => {
-    res.json({ mensaje: 'API de NovaTech Store funcionando 🚀' });
+    res.json({
+        mensaje: 'API de NovaTech Store funcionando 🚀'
+    });
 });
 
-const PORT = process.env.PORT || 3000;
-
-app.listen(PORT, () => {
-    console.log(`Servidor corriendo en http://localhost:${PORT}`);
-});
+module.exports = app;
