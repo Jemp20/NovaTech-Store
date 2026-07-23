@@ -4,6 +4,18 @@
 let ultimoPedidoIdConocido = Number(localStorage.getItem("admin_ultimo_pedido_id")) || null;
 let primeraRevisionPedidos = true;
 
+// Chrome/Edge bloquean el audio hasta que el usuario interactúe con la página.
+// Creamos el contexto una sola vez y lo "desbloqueamos" con el primer click.
+let audioCtx = null;
+document.addEventListener("click", () => {
+    if (!audioCtx) {
+        audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+    }
+    if (audioCtx.state === "suspended") {
+        audioCtx.resume();
+    }
+}, { once: true });
+
 async function revisarPedidosNuevos() {
     const usuario = typeof obtenerUsuario === "function" ? obtenerUsuario() : null;
     if (!usuario || usuario.rol !== "admin") return;
@@ -74,7 +86,13 @@ function actualizarBadgePedidos(pedidos) {
 // Genera un sonido de alerta con el navegador, sin necesitar ningún archivo de audio
 function reproducirBeepAlerta() {
     try {
-        const ctx = new (window.AudioContext || window.webkitAudioContext)();
+        if (!audioCtx) {
+            audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+        }
+        if (audioCtx.state === "suspended") {
+            audioCtx.resume();
+        }
+        const ctx = audioCtx;
 
         const tocarTono = (frecuencia, inicio, duracion) => {
             const osc = ctx.createOscillator();

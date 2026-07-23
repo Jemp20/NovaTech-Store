@@ -1,78 +1,41 @@
-CREATE DATABASE IF NOT EXISTS novatech_store CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
-USE novatech_store;
+-- Ejecutar UNA SOLA VEZ en la base de Aiven (Workbench, conexión "NovaTech Aiven")
+-- Agrega lo que falta en schema.sql pero tu código ya usa.
 
--- Categorías
-CREATE TABLE categorias (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    nombre VARCHAR(100) NOT NULL,
-    slug VARCHAR(100) NOT NULL UNIQUE,
-    creado_en TIMESTAMP DEFAULT CURRENT_TIMESTAMP
-);
+-- 1. Columnas faltantes en productos
+ALTER TABLE productos
+    ADD COLUMN especificaciones JSON NULL,
+    ADD COLUMN destacado TINYINT(1) NOT NULL DEFAULT 0;
 
--- Productos
-CREATE TABLE productos (
+-- 2. Columnas faltantes en pedidos (datos de envío)
+ALTER TABLE pedidos
+    ADD COLUMN telefono_contacto VARCHAR(20),
+    ADD COLUMN documento_identidad VARCHAR(30),
+    ADD COLUMN direccion_envio VARCHAR(255),
+    ADD COLUMN ciudad_envio VARCHAR(100),
+    ADD COLUMN notas_entrega TEXT,
+    ADD COLUMN metodo_pago VARCHAR(50);
+
+-- 3. Tabla de reseñas (no existía en schema.sql)
+CREATE TABLE resenas (
     id INT AUTO_INCREMENT PRIMARY KEY,
-    nombre VARCHAR(150) NOT NULL,
-    descripcion TEXT,
-    precio DECIMAL(10,2) NOT NULL,
-    stock INT NOT NULL DEFAULT 0,
-    imagen VARCHAR(255),
-    categoria_id INT,
+    producto_id INT NOT NULL,
+    usuario_id INT NOT NULL,
+    calificacion TINYINT NOT NULL,
+    comentario TEXT,
+    compra_verificada BOOLEAN DEFAULT FALSE,
     creado_en TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    FOREIGN KEY (categoria_id) REFERENCES categorias(id) ON DELETE SET NULL
+    UNIQUE KEY unico_producto_usuario (producto_id, usuario_id),
+    FOREIGN KEY (producto_id) REFERENCES productos(id) ON DELETE CASCADE,
+    FOREIGN KEY (usuario_id) REFERENCES usuarios(id) ON DELETE CASCADE
 );
 
--- Usuarios
-CREATE TABLE usuarios (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    nombre VARCHAR(100) NOT NULL,
-    email VARCHAR(150) NOT NULL UNIQUE,
-    password_hash VARCHAR(255) NOT NULL,
-    rol ENUM('cliente','admin') DEFAULT 'cliente',
-    creado_en TIMESTAMP DEFAULT CURRENT_TIMESTAMP
-);
-
--- Cupones de descuento
-CREATE TABLE cupones (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    codigo VARCHAR(50) NOT NULL UNIQUE,
-    porcentaje_descuento DECIMAL(5,2) NOT NULL,
-    activo BOOLEAN DEFAULT TRUE,
-    fecha_expiracion DATE,
-    creado_en TIMESTAMP DEFAULT CURRENT_TIMESTAMP
-);
-
--- Pedidos
-CREATE TABLE pedidos (
+-- 4. Tabla de favoritos (no existía en schema.sql)
+CREATE TABLE favoritos (
     id INT AUTO_INCREMENT PRIMARY KEY,
     usuario_id INT NOT NULL,
-    total DECIMAL(10,2) NOT NULL,
-    estado ENUM('pendiente','pagado','enviado','entregado','cancelado') DEFAULT 'pendiente',
-    cupon_id INT,
-    creado_en TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    FOREIGN KEY (usuario_id) REFERENCES usuarios(id),
-    FOREIGN KEY (cupon_id) REFERENCES cupones(id) ON DELETE SET NULL
-);
-
--- Items de cada pedido (detalle)
-CREATE TABLE pedido_items (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    pedido_id INT NOT NULL,
     producto_id INT NOT NULL,
-    cantidad INT NOT NULL,
-    precio_unitario DECIMAL(10,2) NOT NULL,
-    FOREIGN KEY (pedido_id) REFERENCES pedidos(id) ON DELETE CASCADE,
-    FOREIGN KEY (producto_id) REFERENCES productos(id)
-);
-
--- Pagos (integración con Bold)
-CREATE TABLE pagos (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    pedido_id INT NOT NULL,
-    monto DECIMAL(10,2) NOT NULL,
-    metodo VARCHAR(50) DEFAULT 'Bold',
-    estado ENUM('pendiente','aprobado','rechazado') DEFAULT 'pendiente',
-    referencia_bold VARCHAR(150),
     creado_en TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    FOREIGN KEY (pedido_id) REFERENCES pedidos(id)
+    UNIQUE KEY unico_usuario_producto (usuario_id, producto_id),
+    FOREIGN KEY (usuario_id) REFERENCES usuarios(id) ON DELETE CASCADE,
+    FOREIGN KEY (producto_id) REFERENCES productos(id) ON DELETE CASCADE
 );
