@@ -193,7 +193,9 @@ body{
     max-width: 480px;
     max-height: 90vh;
     overflow-y: auto;
+    overflow-x: hidden;
     padding: 32px;
+    box-sizing: border-box;
 }
 
 .admin-modal h3{
@@ -228,6 +230,8 @@ body{
     border-radius: 8px;
     font-family: inherit;
     font-size: 14px;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .admin-field textarea{
@@ -305,6 +309,7 @@ body{
     display: grid;
     grid-template-columns: 1fr 1fr auto;
     gap: 8px;
+    min-width: 0;
 }
 
 .admin-spec-fila input{
@@ -313,6 +318,8 @@ body{
     border-radius: 7px;
     font-family: inherit;
     font-size: 13px;
+    min-width: 0;
+    box-sizing: border-box;
 }
 
 .admin-spec-fila input:focus{
